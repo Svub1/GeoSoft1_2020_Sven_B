@@ -1,0 +1,22 @@
+table,th,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px;
+}
+button{
+    background: rgb(223, 117, 20);
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+#mapid{
+    height: 750px;
+}
+
+.black{
+  color:black;
+  text-align: center;
+}

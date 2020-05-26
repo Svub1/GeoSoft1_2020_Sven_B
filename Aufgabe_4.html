@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distances</title>
+    <link href="public/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+</head>
+<body>
+<button type="button" onclick="locate()" id="loc">Lokalisiere Mich</button>
+<div id="mapid"></div>
+<input type="text" id="geocoding">
+<div id="output"></div>
+<button type="button" id="code" onclick="LocateAdress()" >Suche eine Adresse</button>
+<a href="/draw">Zeichne</a>
+<br>
+<select id="point">
+    <option value="" selected>Punkte die man auswählt</option>
+</select>
+<button type="button"  onclick="calculate()" >Berechnung starten</button>
+<h1> Tabelle mit Haltestellen in Münster </h1>
+<div id="tab"></div>
+<h1 id="headabf">Abfahrten</h1>
+<div id="abf"></div>
+<div id="notifications"></div>
+
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="public/Aufgabe_4.js"></script>
+</body>
+</html>
