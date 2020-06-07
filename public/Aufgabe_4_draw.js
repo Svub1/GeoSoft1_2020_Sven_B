@@ -34,7 +34,11 @@ document.getElementById('export').onclick = function(e) {
     document.getElementById("out").innerHTML = JSON.stringify(data);
 };
 
+/**
 
+ geocoding ist zuständig für das anzeigen der selbst eingegebenen Adresse
+
+ */
 function geocoding() {
     var adress = document.getElementById("adress").value;
     var accessToken = "access_token="; //Todo: hinter dem "access_token=" den MapBox Token einfügen
@@ -55,6 +59,12 @@ function geocoding() {
     req.send()
 }
 
+
+/**
+ sendet die eingebene Adresse zum Server
+ @param input number Adresse
+
+ */
 function sendAdressToServer(input) {
     $.ajax({
         url: "/savegeocoding",
@@ -65,6 +75,9 @@ function sendAdressToServer(input) {
     });
 }
 
+/**
+ lokalisiert
+ */
 function locate() {
     if (navigator.geolocation) { //Überprüft ob geolocation supportet wird
         navigator.geolocation.getCurrentPosition(function (x) { //Wenn erfolgreich koordinaten ermittelt
@@ -94,9 +107,7 @@ document.getElementById("speichern").onclick = function(){
 
 
 
-    //Sendet datein
-
-    // Sending and receiving data in JSON format using POST method
+    //Sendet Dateien und nutzt Post Methode
 //
     $.ajax({
         url: "/getdatabase",
@@ -110,6 +121,10 @@ document.getElementById("speichern").onclick = function(){
 
 var serverdata;
 
+
+/**
+ bekommt die Daten vom Server
+ */
 function getserverdata() {
     var resource = "/getfile"
     var req = new XMLHttpRequest();
@@ -139,6 +154,10 @@ function selectoption (){
     }
 }
 
+
+/**
+ löscht Einträge aus der Datenbank
+ */
 function loeschen() {
     $.ajax({
         url: "/delete",

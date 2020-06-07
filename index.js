@@ -11,8 +11,15 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//Einbindung der Bibliotheken in denServer
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
+
+app.use('/leaflet', express.static(__dirname + '/node_modules/leaflet/dist'));
+
+app.use('/leaflet-draw', express.static(__dirname + '/node_modules/leaflet-draw/dist'));
+
 /**
- * function which creates a Connection to MongoDB. Retries every 3 seconds if noc connection could be established.
+ * function erstellt Verbindung zu MongoDB. Versucht alle 3 Sekunden eine Verbindung herzustellen falls es failed.
  */
 async function connectMongoDB() {
     try {
@@ -29,18 +36,18 @@ async function connectMongoDB() {
     }
 }
 
-// listen on port 3000
+// liegt an  port 3000
 app.listen(port,
     () => console.log(`Example app listening at http://localhost:${port}`)
 )
 
-//Start connecting
+//Startet Verbindung
 connectMongoDB()
 
-//Make all Files stored in Folder "public" accessible over localhost:3000/public
+//Speichert alle Files ind dem Ordner public
 app.use('/public', express.static(__dirname + '/public'))
 
-//Send index.html on request to "/"
+//Sendet index.html auf Nachfrage zu "/"
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/Aufgabe_4.html')
 })
