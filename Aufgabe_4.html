@@ -5,27 +5,67 @@
     <title>Distances</title>
     <link href="public/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="/leaflet/leaflet.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 <body>
-<button type="button" onclick="locate()" id="loc">Lokalisiere Mich</button>
-<div id="mapid"></div>
-<input type="text" id="geocoding">
-<div id="output"></div>
-<button type="button" id="code" onclick="LocateAdress()" >Suche eine Adresse</button>
-<a href="/draw">Zeichne</a>
-<br>
-<select id="point">
-    <option value="" selected>Punkte die man auswählt</option>
-</select>
-<button type="button"  onclick="calculate()" >Berechnung starten</button>
-<h1> Tabelle mit Haltestellen in Münster </h1>
-<div id="tab"></div>
-<h1 id="headabf">Abfahrten</h1>
-<div id="abf"></div>
-<div id="notifications"></div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/draw">Zeichne</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/">Distanzen</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container" >
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="button" class= "btn btn-primary" onclick="locate()" id="loc">Lokalisiere Mich</button>
+            <div id="mapid"></div>
+            <input type="text" class="form-control" id="geocoding">
+            <div id="output"></div>
+            <button type="button" class= "btn btn-primary" id="code" onclick="LocateAdress()" >Suche eine Adresse</button>
+            <br>
+            <select id="point" class="custom-select">
+                <option value="" selected>Punkte die man auswählt</option>
+            </select>
+            <button type="button" class= "btn btn-primary" onclick="calculate()" >Berechnung starten</button>
+            <h1> Tabelle mit Haltestellen in Münster </h1>
+            <div id="tab" class="table"></div>
+            <h1 id="headabf">Abfahrten</h1>
+            <div id="abf" class="table"></div>
+            <div id="notifications"></div>
+
+
+        </div>
+    </div>
+</div>
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+        <small>
+            Sven Busemann<br>
+            s_buse01@uni-muenster.de <br>
+            Aufgabe: 6
+        </small>
+    </div>
+</footer>
+
 
 <script src="/leaflet/leaflet.js"></script>
 <script src="/jquery/jquery.js"></script>
+<script src="/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/leaflet-heat/leaflet-heat.js"></script>
 <script src="public/Aufgabe_4.js"></script>
 </body>
 </html>

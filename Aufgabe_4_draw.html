@@ -6,26 +6,61 @@
     <link href="public/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="/leaflet/leaflet.css"/>
     <link rel='stylesheet' href='/leaflet-draw/leaflet.draw.css' />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/draw">Zeichne</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Distanzen</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
 <div id='mapid'></div>
 <a href='#' id='export'>Export Features</a>
 <div id="out"></div>
 
-<button type="button" id="speichern" >Punkte auf Server speichern</button>
-<button type="button" onclick="geocoding()" >geocoding</button>
-<button type="button" onclick="loeschen()" >löschen</button>
-<button type="button" onclick="locate()" >lokalisieren</button>
+<button type="button" id="speichern" class= " btn btn-primary">Punkte auf Server speichern</button>
+<button type="button" onclick="geocoding()" class= "btn btn-primary" >geocoding</button>
+<button type="button" onclick="loeschen()" class= "btn btn-primary" >löschen</button>
+<button type="button" onclick="locate()" class= "btn btn-primary" >lokalisieren</button>
 
 <select id="point">
-    <option value="" selected>Punkte die man auswählt</option>
+    <option value="" class="custom-select" selected>Punkte die man auswählt</option>
 </select>
 
-<input type="text" id="adress">
+<input type="text" id="adress" class="form-control">
+
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+        <small>
+            Sven Busemann<br>
+            s_buse01@uni-muenster.de <br>
+            Aufgabe: 6
+        </small>
+    </div>
+</footer>
 
 <script src="/leaflet/leaflet.js"></script>
 <script src="/jquery/jquery.js"></script>
 <script src='/leaflet-draw/leaflet.draw.js'></script>
+<script src="/bootstrap/js/bootstrap.bundle.js"></script>
 <script src="public/Aufgabe_4_draw.js"></script>
 </body>
 </html>
