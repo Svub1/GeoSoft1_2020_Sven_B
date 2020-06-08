@@ -15,3 +15,4 @@
 #allgmeine Info
 1. nach klicken der Buttons, z.B "Punkte auf Server speicher" einmal die 
     Seite neu laden. Damit alles funktioniert
+2. nicht vergessen den AccesToken in Aufgabe_4_draw.html hinzuzufügen
