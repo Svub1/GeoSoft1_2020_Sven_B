@@ -88,6 +88,9 @@ function calculate() {
         "coordinates" : [serverdata[parseInt(selection.value)].coordinates[0], serverdata[parseInt(selection.value)].coordinates[1]]
     }
     MetaJSON.Point = json;
+    Marker = L.marker([MetaJSON.Point.coordinates[1], MetaJSON.Point.coordinates[0]]).addTo(MyMap);
+
+    Marker.bindPopup("Punkt Position");
     calculateRes()
 }
 
@@ -126,7 +129,7 @@ function LocateAdress() {
  */
 
 function geocoding(adress) {
-    var accessToken = "access_token="; //Todo: hinter dem "access_token=" den MapBox Token einfügen
+    var accessToken = "access_token=pk.eyJ1Ijoic3Z1YiIsImEiOiJja2EyYW5oZXAwNDlqM2tsOWU0Zm00aTg3In0.KmoDbkF2tnuM3fdneaRsyw"; //Todo: hinter dem "access_token=" den MapBox Token einfügen
     var resource = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + adress + ".json?" + accessToken;
     var req = new XMLHttpRequest();
     req.onload = function () {

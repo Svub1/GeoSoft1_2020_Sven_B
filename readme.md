@@ -4,7 +4,7 @@
 <br>
 2.zum Pfad navigieren, wo MongoDB auf dem PC gespeichert ist
 <br>
-3.mongod --path in Konsole eingeben eingeben + den Pfad wo das Projekt gespeichert ist
+3.mongod --dbpath in Konsole eingeben eingeben + den Pfad wo das Projekt gespeichert ist
 
 #Server starten
 
