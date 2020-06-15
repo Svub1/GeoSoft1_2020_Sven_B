@@ -36,11 +36,14 @@ function MyMapSetup(arr) {
         attribution: "map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetmap</a> contributors",
         id: "osm"
     }).addTo(MyMap);
+    var heatmap = L.heatLayer([]);
     for(var i =  0; i<arr.length;i++){
-        var marker = L.marker([arr[i][4], arr[i][3]]).addTo(MyMap);
+        heatmap.addLatLng([arr[i][4], arr[i][3]]);
+        //var marker = L.marker([arr[i][4], arr[i][3]]).addTo(MyMap);
 
-        marker.bindPopup("Haltestellennummer: " + arr[i][5]);
+        //marker.bindPopup("Haltestellennummer: " + arr[i][5]);
     }
+    heatmap.addTo(MyMap);
     Marker = L.marker([MetaJSON.Point.coordinates[1], MetaJSON.Point.coordinates[0]]).addTo(MyMap);
     
     Marker.bindPopup("Meine Position");

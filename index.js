@@ -18,6 +18,10 @@ app.use('/leaflet', express.static(__dirname + '/node_modules/leaflet/dist'));
 
 app.use('/leaflet-draw', express.static(__dirname + '/node_modules/leaflet-draw/dist'));
 
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
+
+app.use('/leaflet-heat', express.static(__dirname + '/node_modules/leaflet.heat/dist'));
+
 /**
  * function erstellt Verbindung zu MongoDB. Versucht alle 3 Sekunden eine Verbindung herzustellen falls es failed.
  */
